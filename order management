@@ -1,0 +1,37 @@
+// Assuming you're using a JavaScript framework like React or Vue
+
+// 1. Shipping Details Component
+const ShippingDetails = () => {
+  // ... state for address, phone number, etc.
+  // ... form elements for user input
+  // ... submit handler to save shipping details
+};
+
+// 2. Order Summary Component
+const OrderSummary = ({ cartItems, shippingDetails, totalPrice }) => {
+  // ... display cart items, shipping details, and total price
+};
+
+// 3. Checkout Page Component
+const CheckoutPage = () => {
+  // ... state for cart items, shipping details, order status
+  // ... functions to handle order placement and stock reduction
+
+  const handlePlaceOrder = async () => {
+    // ... send order data to backend API
+    // ... update order status in state
+    // ... reduce stock of purchased products
+  };
+
+  return (
+    <div>
+      <ShippingDetails />
+      <OrderSummary 
+        cartItems={cartItems} 
+        shippingDetails={shippingDetails} 
+        totalPrice={totalPrice} 
+      />
+      <button onClick={handlePlaceOrder}>Place Order</button>
+    </div>
+  );
+};
