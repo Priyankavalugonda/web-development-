@@ -1,0 +1,21 @@
+# Enhancements for an E-commerce Website
+
+## 1. Product Categories and Filtering
+
+```python
+# Create a ProductCategory model
+class ProductCategory(models.Model):
+    name = models.CharField(max_length=255)
+
+# Add a category field to the Product model
+class Product(models.Model):
+    # ... other fields
+    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
+
+# Implement filtering in the product listing view
+def product_list(request):
+    category_id = request.GET.get('category')
+    products = Product.objects.all()
+    if category_id:
+        products = products.filter(category_id=category_id)
+    # ... rest of the view logic
